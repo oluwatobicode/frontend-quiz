@@ -1,0 +1,60 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.text {
+  width: 600px;
+  flex: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.text h1 {
+  font-size: 36px;
+  color: var(--darkerBlue);
+  margin-bottom: 10rem;
+}
+
+.text h4 {
+  color: var(--darkBlue);
+  font-style: italic;
+  font-size: 1rem;
+}
+
+.question {
+  display: flex;
+  gap: 25px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.option {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.btnOpt {
+  background-color: var(--white--);
+  width: 500px;
+  height: 75px;
+  border: none;
+  border-radius: 25px;
+  font-weight: 500;
+  font-size: 20px;
+  cursor: pointer;
+  -webkit-box-shadow: 0px 0px 66px -32px rgba(0, 0, 0, 1);
+  -moz-box-shadow: 0px 0px 66px -32px rgba(0, 0, 0, 1);
+  box-shadow: 0px 0px 66px -32px rgba(0, 0, 0, 1);
+}
+
+.btnOpt:hover {
+  border: 2px solid var(--purple--);
+}
+.btnOpt.correct {
+  border: 2px solid var(--green--);
+}
