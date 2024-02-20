@@ -3,16 +3,9 @@ import Button from "../Button/Button";
 import Navbar from "../Navbar/Navbar";
 import Progress from "../Progress/Progress";
 import styles from "./Quiz.module.css";
-function Quiz({
-  question,
-  answer,
-  index,
-  dispatch,
-  numQuestions,
-  icon,
-  title,
-}) {
-  console.log(question.options);
+function Quiz({ question, index, dispatch, numQuestions, icon, title }) {
+  const answer = question.answer;
+  const hasAnswered = answer != null;
   return (
     <div className={styles.container}>
       <Navbar icon={icon} title={title} />
@@ -33,8 +26,18 @@ function Quiz({
         <div className={styles.options}>
           <div className={styles.option}>
             {question.options.map((opt, index) => (
-              <div key={index}>
-                <button className={`${styles.btnOpt}`}>{opt}</button>
+              <div key={opt}>
+                <button
+                  disabled={hasAnswered}
+                  className={`${styles.btnOpt} ${
+                    opt === answer ? styles.correct : ""
+                  }`}
+                  onClick={() =>
+                    dispatch({ type: "hasAnswered", payLoad: index })
+                  }
+                >
+                  {opt}
+                </button>
               </div>
             ))}
           </div>
