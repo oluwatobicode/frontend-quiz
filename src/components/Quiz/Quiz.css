@@ -44,6 +44,7 @@
   height: 75px;
   border: none;
   border-radius: 25px;
+  color: var(--black--);
   font-weight: 500;
   font-size: 20px;
   cursor: pointer;
@@ -52,9 +53,18 @@
   box-shadow: 0px 0px 66px -32px rgba(0, 0, 0, 1);
 }
 
-.btnOpt:hover {
+/* .btnOpt:hover {
+  border: 2px solid var(--purple--);
+} */
+
+.answer {
   border: 2px solid var(--purple--);
 }
-.btnOpt.correct {
+
+.correct {
   border: 2px solid var(--green--);
+}
+
+.wrong {
+  border: 2px solid var(--red--);
 }

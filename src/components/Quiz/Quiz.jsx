@@ -2,15 +2,23 @@
 import Button from "../Button/Button";
 import Navbar from "../Navbar/Navbar";
 import Progress from "../Progress/Progress";
-import styles from "./Quiz.module.css";
-function Quiz({ question, index, dispatch, numQuestions, icon, title }) {
-  const answer = question.answer;
+import "./Quiz.css";
+function Quiz({
+  question,
+  index,
+  dispatch,
+  numQuestions,
+  icon,
+  title,
+  answer,
+}) {
+  const Correctanswer = question.answer;
   const hasAnswered = answer != null;
   return (
-    <div className={styles.container}>
+    <div className="container">
       <Navbar icon={icon} title={title} />
-      <div className={styles.question}>
-        <div className={styles.text}>
+      <div className="question">
+        <div className="text">
           <h4>
             Question {index + 1} out of {numQuestions}
           </h4>
@@ -23,18 +31,23 @@ function Quiz({ question, index, dispatch, numQuestions, icon, title }) {
             />
           </div>
         </div>
-        <div className={styles.options}>
-          <div className={styles.option}>
+        <div className="options">
+          <div className="option">
             {question.options.map((opt, index) => (
               <div key={opt}>
                 <button
                   disabled={hasAnswered}
-                  className={`${styles.btnOpt} ${
-                    opt === answer ? styles.correct : ""
+                  className={`btnOpt ${opt === answer ? answer : ""} ${
+                    hasAnswered
+                      ? opt === Correctanswer
+                        ? "correct"
+                        : "wrong"
+                      : ""
                   }`}
-                  onClick={() =>
-                    dispatch({ type: "hasAnswered", payLoad: index })
-                  }
+                  onClick={() => {
+                    console.log(Correctanswer);
+                    dispatch({ type: "hasAnswered", payLoad: index });
+                  }}
                 >
                   {opt}
                 </button>
