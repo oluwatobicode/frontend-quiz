@@ -1,4 +1,25 @@
-.progress {
-  width: 500px;
-  color: var(--purple--);
+.progressBar {
+  appearance: none;
+  height: 20px;
+  width: 100%;
+  border-radius: 100px;
+
+  /* chrome */
+  &::-webkit-progress-bar {
+    background: var(--grey--);
+    border-radius: 100px;
+  }
+
+  &::-webkit-progress-value {
+    background-color: var(--purple--);
+    border-top-left-radius: 100px;
+    border-bottom-left-radius: 100px;
+  }
+
+  /* firefox */
+  &::-moz-progress-bar {
+    background-color: var(--white--);
+    border-top-left-radius: 100px;
+    border-bottom-left-radius: 100px;
+  }
 }

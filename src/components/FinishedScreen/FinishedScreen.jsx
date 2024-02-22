@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import styles from "./FinishedScreen.module.css";
-function FinishedScreen({ points, dispatch }) {
+function FinishedScreen({ points, dispatch, icon, name }) {
   {
     console.log(points);
   }
@@ -13,7 +13,11 @@ function FinishedScreen({ points, dispatch }) {
       </div>
       <div className={styles.score}>
         <div className={styles.scoreBox}>
-          <h3>8</h3>
+          <div className={styles.detail}>
+            <img src={icon} alt={name} />
+            <h4 className={styles.name}>{name}</h4>
+          </div>
+          <h3>{points}</h3>
           <p>out of 10</p>
         </div>
         <button

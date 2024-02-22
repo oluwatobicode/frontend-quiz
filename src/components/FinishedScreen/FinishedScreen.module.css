@@ -3,6 +3,17 @@
   margin-bottom: 10rem;
 }
 
+.detail {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.detail h4 {
+  font-size: 26px;
+  color: var(--darkerBlue);
+  /* font-size: 10px; */
+}
+
 .text h1 {
   color: var(--darkerBlue);
   font-size: 45px;

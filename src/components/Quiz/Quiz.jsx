@@ -16,50 +16,58 @@ function Quiz({
   const hasAnswered = answer != null;
   return (
     <div className="container">
-      <Navbar icon={icon} title={title} />
       <div className="question">
-        <div className="text">
-          <h4>
-            Question {index + 1} out of {numQuestions}
-          </h4>
-          <h1>{question.question}</h1>
-          <div>
-            <Progress
-              index={index}
+        <Navbar icon={icon} title={title} />
+        <div className="bodyQuestion">
+          <div className="text">
+            <h4>
+              Question {index + 1} out of {numQuestions}
+            </h4>
+            <h1>{question.question}</h1>
+            <div>
+              <Progress
+                index={index}
+                answer={answer}
+                numQuestions={numQuestions}
+              />
+            </div>
+          </div>
+          <div className="options">
+            <div className="option">
+              {question.options.map((opt) => (
+                <div key={opt}>
+                  <button
+                    disabled={hasAnswered}
+                    className={`btnOpt ${opt === answer ? answer : ""} ${
+                      hasAnswered
+                        ? opt === Correctanswer
+                          ? "correct"
+                          : "wrong"
+                        : ""
+                    }`}
+                    onClick={() => {
+                      console.log(Correctanswer);
+                      dispatch({
+                        type: "hasAnswered",
+                        payLoad: opt,
+                        correct: Correctanswer,
+                        icon: icon,
+                        name: title,
+                      });
+                    }}
+                  >
+                    {opt}
+                  </button>
+                </div>
+              ))}
+            </div>
+            <Button
               answer={answer}
+              index={index}
+              dispatch={dispatch}
               numQuestions={numQuestions}
             />
           </div>
-        </div>
-        <div className="options">
-          <div className="option">
-            {question.options.map((opt, index) => (
-              <div key={opt}>
-                <button
-                  disabled={hasAnswered}
-                  className={`btnOpt ${opt === answer ? answer : ""} ${
-                    hasAnswered
-                      ? opt === Correctanswer
-                        ? "correct"
-                        : "wrong"
-                      : ""
-                  }`}
-                  onClick={() => {
-                    console.log(Correctanswer);
-                    dispatch({ type: "hasAnswered", payLoad: index });
-                  }}
-                >
-                  {opt}
-                </button>
-              </div>
-            ))}
-          </div>
-          <Button
-            answer={answer}
-            index={index}
-            dispatch={dispatch}
-            numQuestions={numQuestions}
-          />
         </div>
       </div>
     </div>

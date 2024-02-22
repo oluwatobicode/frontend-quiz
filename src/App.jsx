@@ -19,21 +19,21 @@ function reducer(state, action) {
     case "nextQuestion":
       return { ...state, index: state.index + 1, answer: null };
     case "hasAnswered":
-      const question = state.questions.at(state.index);
       return {
         ...state,
         answer: action.payLoad,
+
         points:
-          action.payload === question?.correctOption
+          action.payLoad === action.correct
             ? state.points + 1
-            : state.points,
+            : state.points + 0,
+        icon: action.icon,
+        name: action.name,
       };
     case "finished":
       return {
         ...state,
         status: "finished",
-        highscore:
-          state.points > state.highscore ? state.points : state.highscore,
       };
 
     case "playAgain":
@@ -51,13 +51,13 @@ const initialState = {
   points: 0,
   index: 0,
   status: "loading",
+  icon: null,
+  name: null,
 };
 
 export default function App() {
-  const [{ questions, answer, index, status, points }, dispatch] = useReducer(
-    reducer,
-    initialState
-  );
+  const [{ questions, answer, index, status, points, icon, name }, dispatch] =
+    useReducer(reducer, initialState);
 
   //data broken down
   const htmlQuiz = questions[0];
@@ -130,7 +130,12 @@ export default function App() {
         </BrowserRouter>
       )}
       {status === "finished" && (
-        <FinishedScreen points={points} dispatch={dispatch} />
+        <FinishedScreen
+          points={points}
+          dispatch={dispatch}
+          icon={icon}
+          name={name}
+        />
       )}
     </>
   );

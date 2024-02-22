@@ -1,8 +1,9 @@
-/* .nav {
+.nav {
   display: flex;
+  flex-direction: row;
   gap: 25px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-} */
+}
+
+.nav h1 {
+  color: var(--darkerBlue);
+}
