@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import styles from "./Start.module.css";
+// import CodingNinja from "../Codingninja/CodingNinja";
 const Start = () => {
   return (
     <div className={styles.container}>

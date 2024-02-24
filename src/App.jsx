@@ -10,6 +10,7 @@ import Accessibility from "./pages/Accessibility";
 import PageNotFound from "./pages/PageNotFound";
 import Javascript from "./pages/JavaScript";
 import FinishedScreen from "./components/FinishedScreen/FinishedScreen";
+// import CodingNinja from "./components/Codingninja/CodingNinja";
 
 function reducer(state, action) {
   switch (action.type) {
@@ -80,7 +81,7 @@ export default function App() {
   console.log(questions);
 
   return (
-    <>
+    <div>
       {status === "loading" && <Loader />}
       {status === "ready" && (
         <BrowserRouter>
@@ -142,6 +143,6 @@ export default function App() {
           name={name}
         />
       )}
-    </>
+    </div>
   );
 }

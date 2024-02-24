@@ -2,6 +2,7 @@
 import Button from "../Button/Button";
 import Navbar from "../Navbar/Navbar";
 import Progress from "../Progress/Progress";
+import CodingNinja from "../Codingninja/CodingNinja";
 import "./Quiz.css";
 function Quiz({
   question,
@@ -19,6 +20,7 @@ function Quiz({
     <div className="container">
       <div className="question">
         <Navbar icon={icon} title={title} />
+
         <div className="bodyQuestion">
           <div className="text">
             <h4>
@@ -71,6 +73,7 @@ function Quiz({
             />
           </div>
         </div>
+        <CodingNinja />
       </div>
     </div>
   );

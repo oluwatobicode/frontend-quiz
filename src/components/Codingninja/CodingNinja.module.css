@@ -1,0 +1,9 @@
+.me {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: var(--purple--);
+  font-weight: 500;
+  font-size: 24px;
+}
