@@ -39,12 +39,12 @@ function Quiz({
                 <div key={opt}>
                   <button
                     disabled={hasAnswered}
-                    className={`btnOpt ${opt === answer ? answer : ""} ${
+                    className={`btnOpt ${opt === answer ? "wrong" : ""} ${
                       hasAnswered
                         ? opt === Correctanswer
                           ? "correct"
-                          : "wrong"
-                        : "normal"
+                          : ""
+                        : ""
                     }`}
                     onClick={() => {
                       console.log(Correctanswer);

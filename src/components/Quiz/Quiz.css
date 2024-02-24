@@ -88,16 +88,12 @@
   border: 2px solid var(--purple--);
 } */
 
-.answer {
-  border: 2px solid var(--purple--);
+.wrong {
+  border: 2px solid var(--red--);
 }
 
 .correct {
   border: 2px solid var(--green--);
-}
-
-.wrong {
-  border: 2px solid var(--red--);
 }
 
 @media screen and (max-width: 1180px) {

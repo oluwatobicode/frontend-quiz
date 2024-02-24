@@ -21,6 +21,10 @@
   margin-top: 1rem;
 }
 
+.error p {
+  color: var(--red--);
+}
+
 @media screen and (max-width: 1180px) {
   .submitbtn {
     width: 100%;

@@ -1,15 +1,29 @@
 /* eslint-disable react/prop-types */
+import { useState } from "react";
 import styles from "./Button.module.css";
 import { useNavigate } from "react-router-dom";
 function Button({ answer, index, numQuestions, dispatch }) {
+  const [errorMessage, setErrorMessage] = useState(null);
+
+  const handleSubmit = () => {
+    if (!answer) {
+      setErrorMessage("You need to select an answer");
+    }
+  };
+
   const navigate = useNavigate();
+
   if (answer === null)
     return (
       <div>
-        <button className={styles.submitbtn}>Submit Answer</button>
+        <button className={styles.submitbtn} onClick={handleSubmit}>
+          Submit Answer
+        </button>
         <div className={styles.error}>
-          <img src="assets/images/icon-error.svg" alt="error" />
-          <p>You need to select an Answer</p>
+          {errorMessage && (
+            <img src="assets/images/icon-error.svg" alt="error" />
+          )}
+          <p>{errorMessage}</p>
         </div>
       </div>
     );
