@@ -4,7 +4,10 @@ function Navbar({ icon, title }) {
   return (
     <div>
       <div className={styles.nav}>
-        <img src={icon} alt="nav" />
+        <div className={styles.sty}>
+          <img src={icon} alt="nav" />
+        </div>
+
         <h1>{title}</h1>
       </div>
     </div>

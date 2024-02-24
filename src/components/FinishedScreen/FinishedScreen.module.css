@@ -70,3 +70,36 @@
   font-weight: 700;
   cursor: pointer;
 }
+
+@media screen and (max-width: 1180px) {
+  .text {
+    margin-bottom: 1rem;
+  }
+
+  .finished {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 990px) {
+  .text h1 {
+    font-size: 28px;
+  }
+
+  .finished {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  .score {
+    max-width: 350px;
+  }
+
+  .scoreBox {
+    width: 100%;
+  }
+
+  .play {
+    width: 100%;
+  }
+}

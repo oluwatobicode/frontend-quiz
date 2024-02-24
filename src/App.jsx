@@ -1,7 +1,7 @@
 /* eslint-disable no-case-declarations */
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { useEffect, useReducer } from "react";
-import "./App.css";
+
 import Loader from "./components/loader/Loader";
 import Home from "./pages/Home";
 import Html from "./pages/Html";
@@ -42,6 +42,9 @@ function reducer(state, action) {
         questions: state.questions,
         status: "ready",
       };
+
+    default:
+      throw new Error("action not known!");
   }
 }
 

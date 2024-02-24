@@ -1,6 +1,8 @@
 /* eslint-disable react/prop-types */
 import styles from "./Button.module.css";
+import { useNavigate } from "react-router-dom";
 function Button({ answer, index, numQuestions, dispatch }) {
+  const navigate = useNavigate();
   if (answer === null)
     return (
       <div>
@@ -31,6 +33,7 @@ function Button({ answer, index, numQuestions, dispatch }) {
           className={styles.submitbtn}
           onClick={() => {
             dispatch({ type: "finished" });
+            navigate(-1);
           }}
         >
           Finished

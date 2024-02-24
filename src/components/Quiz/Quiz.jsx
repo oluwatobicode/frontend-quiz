@@ -14,6 +14,7 @@ function Quiz({
 }) {
   const Correctanswer = question.answer;
   const hasAnswered = answer != null;
+  const optionLetters = ["A", "B", "C", "D"];
   return (
     <div className="container">
       <div className="question">
@@ -34,7 +35,7 @@ function Quiz({
           </div>
           <div className="options">
             <div className="option">
-              {question.options.map((opt) => (
+              {question.options.map((opt, index) => (
                 <div key={opt}>
                   <button
                     disabled={hasAnswered}
@@ -43,7 +44,7 @@ function Quiz({
                         ? opt === Correctanswer
                           ? "correct"
                           : "wrong"
-                        : ""
+                        : "normal"
                     }`}
                     onClick={() => {
                       console.log(Correctanswer);
@@ -56,6 +57,7 @@ function Quiz({
                       });
                     }}
                   >
+                    <div className="optionLetters">{optionLetters[index]}</div>
                     {opt}
                   </button>
                 </div>
@@ -75,3 +77,13 @@ function Quiz({
 }
 
 export default Quiz;
+
+// To-do
+/*
+
+1.mobile and tablet responsive
+2.dark mode 
+3. if button clicked is the right answer show green 
+  - if button clicked is the wrong answer show red on that and show answer with green 
+
+*/

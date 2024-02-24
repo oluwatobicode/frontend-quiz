@@ -13,28 +13,36 @@ const Start = () => {
         <div className={styles.subjects}>
           <Link to="/html" className={styles.link}>
             <button className={styles.btn}>
-              <img src="assets/images/icon-html.svg" alt="html icon" />
+              <div className={styles.html}>
+                <img src="assets/images/icon-html.svg" alt="html icon" />
+              </div>
               <p>Html</p>
             </button>
           </Link>
           <Link to="/css" className={styles.link}>
             <button className={styles.btn}>
-              <img src="assets/images/icon-css.svg" alt="CSS icon" />
+              <div className={styles.css}>
+                <img src="assets/images/icon-css.svg" alt="CSS icon" />
+              </div>
               <p>CSS</p>
             </button>
           </Link>
           <Link to="/javascript" className={styles.link}>
             <button className={styles.btn}>
-              <img src="assets/images/icon-js.svg" alt="JavaScript icon" />
+              <div className={styles.js}>
+                <img src="assets/images/icon-js.svg" alt="JavaScript icon" />
+              </div>
               <p>JavaScript</p>
             </button>
           </Link>
           <Link to="/accessibility" className={styles.link}>
             <button className={styles.btn}>
-              <img
-                src="assets/images/icon-accessibility.svg"
-                alt="accessibility icon"
-              />
+              <div className={styles.accessibility}>
+                <img
+                  src="assets/images/icon-accessibility.svg"
+                  alt="accessibility icon"
+                />
+              </div>
               <p>Accessibility</p>
             </button>
           </Link>

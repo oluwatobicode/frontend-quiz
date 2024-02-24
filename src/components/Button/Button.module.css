@@ -1,5 +1,6 @@
 .submitbtn {
-  width: 500px;
+  width: 100%;
+
   height: 75px;
   border: none;
   cursor: pointer;
@@ -18,4 +19,10 @@
   align-items: center;
   justify-content: center;
   margin-top: 1rem;
+}
+
+@media screen and (max-width: 1180px) {
+  .submitbtn {
+    width: 100%;
+  }
 }

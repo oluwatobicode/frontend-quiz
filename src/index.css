@@ -29,3 +29,21 @@ body {
   --darkerBlue: #313e51;
   --purple--: #a729f5;
 }
+
+@media screen and (max-width: 1000px) {
+  html {
+    background-image: url("../public/assets/images/pattern-background-tablet-light.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 50%;
+    font-family: "Rubik", sans-serif;
+  }
+
+  html {
+    background-image: url("../public/assets/images/pattern-background-mobile-light.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+}
