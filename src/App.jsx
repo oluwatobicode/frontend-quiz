@@ -63,19 +63,21 @@ export default function App() {
     useReducer(reducer, initialState);
 
   //data broken down
-  const htmlQuiz = questions[0];
-  const cssQuiz = questions[1];
-  const jsQuiz = questions[2];
-  const accessibilityQuiz = questions[3];
+  const htmlQuiz = questions?.quizzes?.[0];
+  const cssQuiz = questions?.quizzes?.[1];
+  const jsQuiz = questions?.quizzes?.[2];
+  const accessibilityQuiz = questions?.quizzes?.[3];
 
   useEffect(function () {
-    fetch("http://localhost:8000/quizzes")
+    fetch("https://oluwatobicode.github.io/api/index.json")
       .then((res) => res.json())
       .then((data) =>
         dispatch({ type: "dataSeen", payLoad: data, status: "ready" })
       )
       .catch((err) => console.log(err));
   }, []);
+
+  console.log(questions);
 
   return (
     <>
